@@ -6,21 +6,21 @@ The output includes:
 
 The current number of iterations is: 10000
 
-The current shortest path planning scheme is: [0, 6, 0, 7, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 2, 10, 0, 9, 8, 4, 5, 0, 0, 0, 0, 0, 0, 0]
+The current shortest route planning scheme is: [0, 6, 0, 7, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 2, 10, 0, 9, 8, 4, 5, 0, 0, 0, 0, 0, 0, 0]
 
-The current shortest route is: 479.44 kilometers
+The current shortest route is: 479.44 km
 
-The shortest path planning scheme is: [[0, 6, 0], [0, 7, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 3, 1, 0], [0, 0], [0, 2, 10, 0], [0, 9, 8, 4, 5, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]].
+The shortest route planning scheme is: [[0, 6, 0], [0, 7, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 3, 1, 0], [0, 0], [0, 2, 10, 0], [0, 9, 8, 4, 5, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]].
 
-Shortest path is: 479.44 kilometers
+Shortest route is: 479.44 km
 
-Shortest path cost is: $5,753.32
+Shortest route cost is: $5,753.32
 
 Number of vehicles needed: 5
 
-Distance traveled by Vehicle 1: 91.41 kilometers
+Distance traveled by Vehicle 1: 91.41 km
 
-Distance traveled by Vehicle 2: 40.20 kilometers
+Distance traveled by Vehicle 2: 40.20 km
 
 Distance traveled by Vehicle 3: 109.30 km
 
@@ -29,10 +29,10 @@ Distance traveled by Vehicle 4: 107.22 km
 Distance traveled by Vehicle 5: 131.32 km
 
 # Figure1.png
-Vehicle Shortest Path Iteration Convergence Plot
+Vehicle shortest route iteration convergence
 
 # Figure2.png
-Vehicle shortest path planning diagram
+Vehicle shortest route planning map
 
 # Remarks
 This is the code of the genetic algorithm designed in my undergraduate thesis to solve the CVRP, mainly using the elite retention strategy as the design idea, the parameter data is randomly generated, can be modified according to the needs of their own. The code is strictly prohibited direct copy and paste, can be appropriate reference and borrowing, violators will be punished!
