@@ -79,7 +79,7 @@ def rationalize(array):
     veh_set = adjust(overloads, no_overloads, veh_set, veh_max_limit)
     return veh_set
 
-# Merge (combining each random path after rationalization into a solution)
+# Merge (combining each random route after rationalization into a solution)
 # 合并（将合理化后的每条随机路径合并为解）
 def merge_array(veh_set):
     new_array = []
@@ -89,7 +89,7 @@ def merge_array(veh_set):
     new_array.insert(0, 0)
     return new_array
 
-# Delineate paths (add zeros before and after split solutions)
+# Delineate routes (add zeros before and after split solutions)
 # 划分路径（在拆分的解前后添加0）
 def add_0(veh_set):
     for i in veh_set:
@@ -97,7 +97,7 @@ def add_0(veh_set):
         i.insert(0, 0)
     return veh_set
 
-# Calculate fitness (calculate fitness for each path)
+# Calculate fitness (calculate fitness for each route)
 # 计算适应度（计算每条路径的适应度）
 def get_fit(veh_set):
     load_sum = 0
@@ -180,13 +180,13 @@ def count_vehicle_num():
     print(f'需要车辆数为：{count}辆')
     # print(f'Number of vehicles required: {count}')
 
-# Output the distance traveled by vehicles on each path
+# Output the distance traveled by vehicles on each route
 # 输出每条路径车辆的行驶距离
 def distance_per_vehicle(veh_set):
     j = 1
-    for i, path in enumerate(veh_set, start=1):
-        if len(path) > 2:
-            distance = get_fit([path])
+    for i, route in enumerate(veh_set, start=1):
+        if len(route) > 2:
+            distance = get_fit([route])
             print(f'车辆 {j} 的行驶距离为: {distance:.2f} 公里')
             # print(f'The distance traveled by vehicle {j} is: {distance:.2f} km')
             j += 1
@@ -210,14 +210,14 @@ def plt_convergence():
 def plt_vehicle_routes():
     colors = plt.cm.viridis(np.linspace(0, 1, len(veh_opt)))
     plt.figure(figsize = (10, 6))
-    for i, path in enumerate(veh_opt):
-        X = [local[index][0] for index in path]
-        Y = [local[index][1] for index in path]        
+    for i, route in enumerate(veh_opt):
+        X = [local[index][0] for index in route]
+        Y = [local[index][1] for index in route]        
         plt.plot(X, Y, marker = 'o', linestyle = '-', color = colors[i])
         plt.title('车辆最短路径规划图', fontsize = 16)  # title = 'Vehicle shortest route planning map'
         plt.grid(True)        
-        for j in range(len(path)):
-            index = path[j]
+        for j in range(len(route)):
+            index = route[j]
             x, y = local[index]
             plt.text(x, y, f'({x}, {y})', fontsize=8, ha='right')
     plt.xlabel('X', fontsize = 14) and plt.ylabel('Y', fontsize = 14)
@@ -337,7 +337,7 @@ for i in range(times):
         selectors.append(i)
     array_opt = selectors
 
-    # Record the current path and continue iterating
+    # Record the current route and continue iterating
     # 记录当前路径，继续进行迭代
     array_set = array_opt 
     
@@ -353,10 +353,10 @@ for i in range(times):
     # 输出目前最优数据
     program = route_sum_opt.index(min(route_sum_opt))
     print(f'目前最短路径规划方案为：{array_set[program]}')
-    # print(f'The current shortest path planning program is: {array_set[program]}')
+    # print(f'The current shortest route planning scheme is: {array_set[program]}')
     min_routes.append(min(route_sum_opt))
     print(f'目前最短路线为：{min(route_sum_opt):.2f}公里')
-    # print(f'Current shortest route is: {min(route_sum_opt):.2f} km')
+    # print(f'The current shortest route is: {min(route_sum_opt):.2f} km')
 
 # Split each solution
 # 拆分每个解
@@ -368,9 +368,9 @@ print(f'最短路径规划方案为：{veh_opt}')
 print(f'最短路径为：{min_route_length:.2f}公里')
 print(f'最短路径成本为：{total_cost:.2f}元')
 '''
-print(f'The shortest path planning scheme is: {veh_opt}')
-print(f'The shortest path is: {min_route_length:.2f} km')
-print(f'The shortest path cost is: {total_cost:.2f} dollars')'''
+print(f'The shortest route planning scheme is: {veh_opt}')
+print(f'The shortest route is: {min_route_length:.2f} km')
+print(f'The shortest route cost is: {total_cost:.2f} dollars')'''
 count_vehicle_num()
 distance_per_vehicle(veh_opt)
 
