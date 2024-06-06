@@ -4,8 +4,8 @@ This is the code of the genetic algorithm designed in my undergraduate thesis to
 The code is strictly prohibited from direct copy and paste, can be appropriate reference to learn, violators will be punished!
 
 这是我本科毕业论文中设计的遗传算法求解 CVRP 的代码，主要采用精英保留策略作为设计思路，参数数据是随机生成的，可根据需要自己修改。
-# 介绍
 
+# 介绍
 # Code.py
 输出结果包括：
 目前迭代次数为：10000次
